@@ -1,0 +1,46 @@
+{
+  "name": "explore-the-cosmos_server",
+  "version": "1.0.0",
+  "description": "This is a boilerplate project used for starting new projects!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require test/setup.js",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "predeploy": "npm audit",
+    "deploy": "git push heroku master"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/vision": "^2.3.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.0.0",
+    "knex": "^0.21.17",
+    "migrate": "^1.7.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.5.1",
+    "postgrator": "^4.1.1",
+    "winston": "^3.3.3",
+    "xss": "^1.0.8"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.1",
+    "nodemon": "^2.0.4",
+    "postgrator-cli": "^3.2.0",
+    "supertest": "^4.0.2"
+  },
+  "globals": {
+    "supertest": true,
+    "expect": true
+  },
+  "directories": {
+    "test": "test"
+  }
+}
