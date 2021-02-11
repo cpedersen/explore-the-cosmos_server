@@ -1,4 +1,4 @@
-# Express Boilerplate!
+# Explore the Cosmos 
 
 This is a boilerplate project used for starting new projects!
 
