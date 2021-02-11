@@ -6,14 +6,15 @@ const { tagImages } = require("./google-vision-tags-service");
 const router = express.Router();
 const jsonParser = express.json();
 
-const serializeTag = (tag) => ({
+// Let's serialize an object to a JSON string.
+// We just need the tag id.
+/*const serializeTag = (tag) => ({
   id: tag.id,
-});
+});*/
 
 /* -------------------------------------------------------- */
-/*                 route ('/') - get all                    */
+/*                           Route                          */
 /* -------------------------------------------------------- */
-// router.route("/").get((req, res, next) => {});
 router.post("/tag-images", tagImages);
 
 module.exports = router;
