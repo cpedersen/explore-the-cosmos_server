@@ -1,8 +1,0 @@
-NODE_ENV=development
-PORT=8000
-DATABASE_URL="postgresql://dunder_mifflin@localhost/explore_the_cosmos"
-TEST_DATABASE_URL="postgresql://dunder_mifflin@localhost/explore_the_cosmos_test"
-GOOGLE_APPLICATION_CREDENTIALS="~/Projects/explore-the-cosmos_server/My%20Project%2080745-bb2f7ce916ad.json"
-
-
-
