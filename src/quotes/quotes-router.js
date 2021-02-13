@@ -18,9 +18,8 @@ const serializeQuote = (quote) => ({
 quotesRouter
   .route("/quote")
   .get((req, res, next) => {
-    // res.json("Some random quote");
-    // return;
     const knexInstance = req.app.get("db");
+    // Find random quote
     let quotesArray = QuotesService.getAllQuotes(knexInstance)
       .then((quotes) => {
         const quote = quotes
@@ -50,17 +49,5 @@ quotesRouter
       })
       .catch(next);
   });
-
-/* -------------------------------------------------------- */
-/*                    Find Random Quote                     */
-/* -------------------------------------------------------- */
-//let randomQuote = quotesArray[Math.floor(Math.random() * quotesArray.length)];
-//console.log("randomQuote: ", randomQuote);
-let randomQuote = () => {};
-
-/* -------------------------------------------------------- */
-/*                    Route Post                            */
-/* -------------------------------------------------------- */
-quotesRouter.post("/quote", randomQuote);
 
 module.exports = quotesRouter;

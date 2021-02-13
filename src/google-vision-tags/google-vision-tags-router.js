@@ -8,9 +8,9 @@ const jsonParser = express.json();
 
 // Let's serialize an object to a JSON string.
 // We just need the tag id.
-/*const serializeTag = (tag) => ({
+const serializeTag = (tag) => ({
   id: tag.id,
-});*/
+});
 
 /* -------------------------------------------------------- */
 /*                           Route                          */
