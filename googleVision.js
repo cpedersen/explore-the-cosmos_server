@@ -1,3 +1,5 @@
+// This file used for test purposes only.
+
 require("dotenv").config();
 // Imports the Google Cloud client library
 const vision = require("@google-cloud/vision");
