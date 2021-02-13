@@ -1,3 +1,5 @@
+//module.exports = app
+
 require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
@@ -12,7 +14,7 @@ const { CLIENT_ORIGIN } = require("./config");
 const { domain } = require("process");
 const routes = require("./routes");
 const quotesRouter = require("./quotes/quotes-router");
-const { attachCookies } = require("superagent");
+/*const { attachCookies } = require("superagent");*/
 console.log("env", process.env);
 
 /* -------------------------------------------------------- */
@@ -20,16 +22,11 @@ console.log("env", process.env);
 /* -------------------------------------------------------- */
 const app = express();
 
-/* -------------------------------------------------------- */
-/*                 Body Parser setup                        */
-/* -------------------------------------------------------- */
-// bodyParser is needed so that the form data is available in
-// req.body.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /* -------------------------------------------------------- */
-/*                 Winston logger setup                     */
+/*                 Winston setup                            */
 /* -------------------------------------------------------- */
 const logger = winston.createLogger({
   level: "info",
@@ -46,27 +43,31 @@ if (NODE_ENV !== "production") {
 }
 
 /* -------------------------------------------------------- */
-/*                   Morgan & Helmet Setup                  */
+/*              Morgan & other setup                        */
 /* -------------------------------------------------------- */
-// Determines if the app is running in production. When
-// deplying via Heroku, that sets the env variable to
-// "production" automatically.
+//NODE_ENV is a Node env variable. It determines if the app
+//is running in production or some other env. When we deploy
+//Heroku sets this env variable to a value of "production".
+//We can check to see if the NODE_ENV is set to "production"
+//or not, and set the value for morgan as appropriate.
 const morganOption = NODE_ENV === "production" ? "tiny" : "common";
 app.use(morgan(morganOption));
-
-// Helmet must be set before cors. Helmet allows dynamic
-// setting of the head section of a page.
 app.use(helmet());
 
 /* -------------------------------------------------------- */
 /*                        CORS                              */
 /* -------------------------------------------------------- */
-// Configures the server to allow cross domain communication.
 app.use(
   cors({
     origin: CLIENT_ORIGIN,
   })
 );
+//app.use(cors());
+
+/* -------------------------------------------------------- */
+/*                        USE                               */
+/* -------------------------------------------------------- */
+//app.use('/api/folders', foldersRouter)
 
 /* -------------------------------------------------------- */
 /*                        GET                               */
@@ -90,7 +91,6 @@ app.get("/queryViewer", (req, res) => {
   res.end(); //do not send any data back to the client
 });
 
-// Routes should be prepended with 'api'
 app.use("/api", routes);
 app.use("/api", quotesRouter);
 
@@ -99,6 +99,7 @@ app.use("/api", quotesRouter);
 /* -------------------------------------------------------- */
 app.use(function errorHandler(error, req, res, next) {
   let response;
+  //if (process.env.NODE_ENV === 'production') {
   if (NODE_ENV === "production") {
     response = { error: { message: "server error" } };
   } else {
@@ -111,7 +112,6 @@ app.use(function errorHandler(error, req, res, next) {
 /* -------------------------------------------------------- */
 /*                    GOOGLE VISION                         */
 /* -------------------------------------------------------- */
-// Used for test purposes only...
 /*
 app.post("/tag-image", async (req, res) => {
   console.log("body", req.body);
