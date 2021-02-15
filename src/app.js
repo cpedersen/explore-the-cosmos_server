@@ -75,7 +75,7 @@ app.get("/", (req, res) => {
   res.status(200);
 });
 
-app.get("/echo", (req, res) => {
+/*app.get("/echo", (req, res) => {
   const responseText = `Here are some details of your request:
       Base URL: ${req.baseUrl}
       Host: ${req.hostname}
@@ -87,9 +87,9 @@ app.get("/echo", (req, res) => {
 app.get("/queryViewer", (req, res) => {
   console.log(req.query);
   res.end(); //do not send any data back to the client
-});
+});*/
 
-// Routes should be prepended with 'api'
+// 'routes' below refers to Google tags
 app.use("/api", routes);
 app.use("/api", quotesRouter);
 
