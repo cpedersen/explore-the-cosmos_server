@@ -3,7 +3,7 @@ const QuotesService = {
     return knex.select("*").from("cosmos_quotes");
   },
   getById(knex, id) {
-    return knex.from("cosmos_quotes").select("*").where("id", id).first();
+    return knex.select("*").from("cosmos_quotes").where("id", id).first();
   },
 };
 

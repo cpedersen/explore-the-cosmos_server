@@ -1,4 +1,4 @@
-INSERT INTO cosmos_quotes (id, author, content)
+INSERT INTO cosmos_quotes_test (id, author, content)
 VALUES
     ('1','Carl Sagan', 'We are a way for the universe to know itself.'),
     ('2', 'Carl Sagan', 'The cosmos is within us. We are made of star-stuff.'),
