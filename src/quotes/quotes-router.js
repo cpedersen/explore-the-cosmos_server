@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const xss = require("xss");
 const QuotesService = require("./quotes-service");
-
 const quotesRouter = express.Router();
 const jsonParser = express.json();
 
@@ -19,8 +18,10 @@ quotesRouter
   .route("/quote")
   .get((req, res, next) => {
     const knexInstance = req.app.get("db");
+    /*const table = req.app.get("db_table");*/
     // Find random quote
     let quotesArray = QuotesService.getAllQuotes(knexInstance)
+      /*let quotesArray = QuotesService.getAllQuotes(knexInstance, table)*/
       .then((quotes) => {
         const quote = quotes
           .map(serializeQuote)

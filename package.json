@@ -1,20 +1,20 @@
 {
   "name": "explore-the-cosmos_server",
   "version": "1.0.0",
-  "description": "This is a boilerplate project used for starting new projects!",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require test/setup.js",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
     "predeploy": "npm audit",
-    "deploy": "git push heroku master",
+    "deploy": "git push heroku main",
     "migrate": "postgrator --config postgrator-config.js",
     "migrate:test": "env NODE_ENV=test npm run migrate",
     "migrate:production": "heroku run npm run migrate"
   },
   "engines": {
-    "node": "14.15.2"
+    "node": "14.15.5"
   },
   "keywords": [],
   "author": "",
@@ -28,11 +28,10 @@
     "express": "^4.17.1",
     "helmet": "^4.0.0",
     "knex": "^0.21.17",
+    "logger": "0.0.1",
     "migrate": "^1.7.0",
     "morgan": "^1.10.0",
-    "mssql": "^6.3.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.2.5",
+    "path": "^0.12.7",
     "pg": "^8.5.1",
     "postgrator": "^4.1.1",
     "postgrator-cli": "^3.2.0",
@@ -51,9 +50,5 @@
   },
   "directories": {
     "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cpedersen/explore-the-cosmos_server"
   }
 }

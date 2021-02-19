@@ -8,6 +8,8 @@ module.exports = {
   TEST_DATABASE_URL:
     process.env.TEST_DATABASE_URL ||
     "postgresql://dunder_mifflin@localhost/cosmos_quotes_test",
+  /*DATABASE_TABLE: "cosmos_quotes",
+  DATABASE_TABLE_TEST: "cosmos_quotes_test",*/
   GOOGLE_APPLICATION_CREDENTIALS:
     process.env.GOOGLE_APPLICATION_CREDENTIALS || "http://localhost:8000/api",
 };
