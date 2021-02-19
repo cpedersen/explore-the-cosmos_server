@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS cosmos_quotes_test;
+DROP TABLE IF EXISTS cosmos_quotes;
