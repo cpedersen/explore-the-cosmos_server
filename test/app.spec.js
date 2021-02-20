@@ -2,21 +2,21 @@ const expect = require("chai").expect;
 const supertest = require("supertest");
 const app = require("../src/app");
 const knex = require("knex");
-/*const { TEST_DATABASE_URL, DATABASE_TABLE_TEST } = require("../src/config.js");*/
+const { TEST_DATABASE_URL } = require("../src/config.js");
+const { makeQuotesArray } = require("./quotes.fixtures");
 
-describe("GET", () => {
-  let testQuote = "We are a way for the universe to know itself.";
+// These tests use Chai
 
-  it('GET / responds with 200 containing "Somewhere, something incredible is waiting to be known!"', () => {
+describe("GET /", () => {
+  it("GET / responds with 200 and correct introductory quote", () => {
     return supertest(app)
       .get("/")
       .expect(200, "Somewhere, something incredible is waiting to be known!");
   });
 });
 
-describe.only("Database Endpoint", function () {
+describe("Quotes Database", function () {
   let db;
-  console.log("TEST_DATABASE_URL", TEST_DATABASE_URL);
 
   before("make knex instance", () => {
     db = knex({
@@ -25,48 +25,55 @@ describe.only("Database Endpoint", function () {
     });
 
     app.set("db", db);
-    app.set("db_table", DATABASE_TABLE_TEST);
   });
 
   after("disconnect from db", () => db.destroy());
 
-  // before("clean the table", () => db("cosmos_quotes_test").truncate());
+  before("clean the table", () => db("cosmos_quotes").truncate());
 
   context("Given there are quotes in the database", () => {
-    const testQuotes = [
-      {
-        id: 1,
-        author: "Carl Sagan",
-        content: "We are a way for the universe to know itself.",
-      },
-      {
-        id: 2,
-        author: "Carl Sagan",
-        content: "The cosmos is within us. We are made of star-stuff.",
-      },
-      {
-        id: 3,
-        author: "Carl Sagan",
-        content:
-          "The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.",
-      },
-      {
-        id: 4,
-        author: "Carl Sagan",
-        content:
-          "One of the saddest lessons of history is this: If we’ve been bamboozled long enough, we tend to reject any evidence of the bamboozle. We’re no longer interested in finding out the truth. The bamboozle has captured us. It’s simply too painful to acknowledge, even to ourselves, that we’ve been taken. Once you give a charlatan power over you, you almost never get it back.",
-      },
-    ];
+    const testQuotes = makeQuotesArray();
 
     beforeEach("insert quotes", () => {
-      return db.into("cosmos_quotes_test").insert(testQuotes);
+      return db.into("cosmos_quotes").insert(testQuotes);
     });
 
-    it("GET /api/quote responds with 200 and all of the quotes", () => {
-      return supertest(app).get("/api/quote").expect(200, testQuotes);
+    it("GET /api/quote responds with 200 for a random quote", () => {
+      return supertest(app).get("/api/quote").expect(200);
+    });
+
+    it("GET /api/quote responds with 200 and all of the following: author, id, content", () => {
+      return supertest(app)
+        .get("/api/quote")
+        .expect(200)
+        .then((response) => {
+          expect(response.body).to.have.to.have.all.keys(
+            "author",
+            "id",
+            "content"
+          );
+        });
+    });
+
+    it("GET /api/quote responds with 200 and 'Carl Sagan' as the author", () => {
+      return supertest(app)
+        .get("/api/quote")
+        .expect(200)
+        .then((response) => {
+          expect(response.body.author).to.equal("Carl Sagan");
+        });
+    });
+
+    it("GET /api/quote responds with 200 and content that is a string", () => {
+      return supertest(app)
+        .get("/api/quote")
+        .expect(200)
+        .then((response) => {
+          expect(response.body.content).to.be.a("string");
+        });
     });
 
     after("disconnect from db", () => db.destroy());
-    afterEach("cleanup", () => db("cosmos_quotes_test").truncate());
+    afterEach("cleanup", () => db("cosmos_quotes").truncate());
   });
 });

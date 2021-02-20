@@ -24,3 +24,7 @@ function makeQuotesArray() {
     },
   ];
 }
+
+module.exports = {
+  makeQuotesArray,
+};
