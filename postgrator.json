@@ -1,9 +1,0 @@
-{
-    "migrationDirectory": "migrations",
-    "driver": "pg",
-    "host": "127.0.0.1",
-    "port": 5432,
-    "database": "cosmos_quotes",
-    "username": "dunder_mifflin",
-    "password": ""
-}

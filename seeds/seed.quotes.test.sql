@@ -1,6 +1,6 @@
 INSERT INTO cosmos_quotes (id, author, content)
 VALUES
-    ('1','Carl Sagan', 'We are a way for the universe to know itself.'),
+    ('1','Carl Sagan', 'We are a way for the cosmos to know itself.'),
     ('2', 'Carl Sagan', 'The cosmos is within us. We are made of star-stuff.'),
     ('3', 'Carl Sagan', 'The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple 
 pies were made in the interiors of collapsing stars. We are made of starstuff.'),

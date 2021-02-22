@@ -18,10 +18,8 @@ quotesRouter
   .route("/quote")
   .get((req, res, next) => {
     const knexInstance = req.app.get("db");
-    /*const table = req.app.get("db_table");*/
     // Find random quote
     let quotesArray = QuotesService.getAllQuotes(knexInstance)
-      /*let quotesArray = QuotesService.getAllQuotes(knexInstance, table)*/
       .then((quotes) => {
         const quote = quotes
           .map(serializeQuote)
