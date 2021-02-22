@@ -75,20 +75,6 @@ app.get("/", (req, res) => {
   res.status(200);
 });
 
-/*app.get("/echo", (req, res) => {
-  const responseText = `Here are some details of your request:
-      Base URL: ${req.baseUrl}
-      Host: ${req.hostname}
-      Path: ${req.path}
-    `;
-  res.send(responseText);
-});
-
-app.get("/queryViewer", (req, res) => {
-  console.log(req.query);
-  res.end(); //do not send any data back to the client
-});*/
-
 // 'routes' below refers to Google tags
 app.use("/api", routes);
 app.use("/api", quotesRouter);
@@ -110,7 +96,9 @@ app.use(function errorHandler(error, req, res, next) {
 /* -------------------------------------------------------- */
 /*                    GOOGLE VISION                         */
 /* -------------------------------------------------------- */
-/*
+/* 
+// Used for initial experimentation:
+
 app.post("/tag-image", async (req, res) => {
   console.log("body", req.body);
 

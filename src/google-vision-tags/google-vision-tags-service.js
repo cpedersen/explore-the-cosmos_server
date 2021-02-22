@@ -10,8 +10,8 @@ const MIN_TAG_SCORE = process.env.MIN_VISION_TAG_SCORE || 0.1;
 // promise. await will make JavaScript wait until a promise returns
 // its result.
 const tagImages = async (req, res) => {
-  console.log("in tag images", req.body);
-  console.log("MIN_TAG_SCORE", MIN_TAG_SCORE);
+  //console.log("in tag images: ", req.body);
+  //console.log("MIN_TAG_SCORE: ", MIN_TAG_SCORE);
   const imageUrls = req.body;
 
   const result = await Promise.all(
@@ -24,11 +24,10 @@ const tagImages = async (req, res) => {
         // the need to explicitly configure promise chains
         (async () => {
           const [result] = await client.labelDetection(url);
-          console.log("result: ", result);
-          // TODO - Create list of labels/tags - why isn't this
-          // getting printed?
+          //console.log("result: ", result);
+          //List of labels/tags
           const annotations = result.labelAnnotations;
-          console.log("annotations: ", annotations);
+          //console.log("annotations: ", annotations);
 
           // Filter the functions, so that the labels are more
           // useful.
@@ -46,13 +45,13 @@ const tagImages = async (req, res) => {
 
             return acc;
           }, []);
-          console.log("Labels: ", labels);
+          //console.log("labels: ", labels);
           resolve(labels);
         })();
       });
     })
   );
-  console.log("result: ", result);
+  //console.log("result: ", result);
   res.send({ tags: result });
 };
 
