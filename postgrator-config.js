@@ -7,18 +7,13 @@ let port;
 let database;
 let username;
 let password;
+
 if (process.env.DATABASE_URL) {
   const dbUrl = url.parse(process.env.DATABASE_URL);
-  console.log("dbUrl ", dbUrl);
   host = dbUrl.hostname;
-  console.log("host ", host);
   port = dbUrl.port;
-  console.log("port ", port);
   database = dbUrl.pathname.replace(/^\//, "");
-  console.log("database ", database);
-  [(username, password)] = dbUrl.auth.split(":");
-  console.log("username ", username);
-  console.log("password ", password);
+  [username, password] = dbUrl.auth.split(":");
 }
 console.log("host ", host);
 console.log("port ", port);

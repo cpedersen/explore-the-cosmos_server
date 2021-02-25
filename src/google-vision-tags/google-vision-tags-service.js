@@ -13,7 +13,7 @@ const tagImages = async (req, res) => {
   //console.log("in tag images: ", req.body);
   //console.log("MIN_TAG_SCORE: ", MIN_TAG_SCORE);
   const imageUrls = req.body;
-
+  // TODO - Refactor this; don't need to use Promise here
   const result = await Promise.all(
     // Loop through the url for each image
     imageUrls.map((url) => {
