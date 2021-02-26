@@ -17,6 +17,7 @@ const PORT =
 
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 console.log("DATABASE_URL: ", DATABASE_URL);
+console.log("PORT: ", PORT);
 
 module.exports = {
   PORT: PORT || 5432,

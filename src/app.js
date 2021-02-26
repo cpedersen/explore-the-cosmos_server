@@ -66,6 +66,7 @@ app.use(
     origin: CLIENT_ORIGIN,
   })
 );
+console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 
 /* -------------------------------------------------------- */
 /*                        GET                               */
