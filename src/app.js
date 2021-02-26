@@ -77,6 +77,11 @@ console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 /* -------------------------------------------------------- */
 app.get("/with-cors", cors(corsOptions), "/", (req, res) => {
   //app.get("/", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   res.send("Somewhere, something incredible is waiting to be known!");
   res.status(200);
 });
