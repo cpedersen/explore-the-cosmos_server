@@ -61,9 +61,13 @@ app.use(helmet());
 /*                        CORS                              */
 /* -------------------------------------------------------- */
 // Configures the server to allow cross domain communication.
-/*const corsOptions = {
+const corsOptions = {
+  //origin: true,
   origin: CLIENT_ORIGIN,
-};*/
+  preflightContinue: true,
+  credentials: true,
+  methods: "POST, GET, PUT, DELETE, OPTIONS",
+};
 
 app.options("*", cors());
 app.use(
@@ -76,40 +80,36 @@ console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 /* -------------------------------------------------------- */
 /*                        GET                               */
 /* -------------------------------------------------------- */
-app.get("/", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+app.get("/", cors(corsOptions), (req, res) => {
+  //res.header("Access-Control-Allow-Origin", "*");
+  //res.header("Access-Control-Allow-Credentials", true);
+  //res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+  //res.header(
+  //  "Access-Control-Allow-Headers",
+  //  "Origin, X-Requested-With, Content-Type, Accept"
+  //);
   res.send("Somewhere, something incredible is waiting to be known!");
   res.status(200);
 });
 
 // 'routes' below refers to Google tags
-app.use("/api", routes);
-app.use("/api", quotesRouter);
+app.use("/api", cors(corsOptions), routes);
+app.use("/api", cors(corsOptions), quotesRouter);
 
 /* -------------------------------------------------------- */
 /*                    ERROR HANDLER                         */
 /* -------------------------------------------------------- */
-app.use(
-  //"/with-cors",
-  //cors(corsOptions),
-  function errorHandler(error, req, res, next) {
-    //app.use(function errorHandler(error, req, res, next) {
-    let response;
-    if (NODE_ENV === "production") {
-      response = { error: { message: "server error" } };
-    } else {
-      console.error(error);
-      response = { message: error.message, error };
-    }
-    res.status(500).json(response);
+app.use(cors(corsOptions), function errorHandler(error, req, res, next) {
+  //app.use(function errorHandler(error, req, res, next) {
+  let response;
+  if (NODE_ENV === "production") {
+    response = { error: { message: "server error" } };
+  } else {
+    console.error(error);
+    response = { message: error.message, error };
   }
-);
+  res.status(500).json(response);
+});
 
 /* -------------------------------------------------------- */
 /*                    GOOGLE VISION                         */
