@@ -61,10 +61,11 @@ app.use(helmet());
 /*                        CORS                              */
 /* -------------------------------------------------------- */
 // Configures the server to allow cross domain communication.
-const corsOptions = {
+/*const corsOptions = {
   origin: CLIENT_ORIGIN,
-};
+};*/
 
+app.options("*", cors());
 app.use(
   cors({
     origin: CLIENT_ORIGIN,
@@ -88,27 +89,15 @@ app.get("/", (req, res) => {
 });
 
 // 'routes' below refers to Google tags
-app.use(
-  cors({
-    origin: CLIENT_ORIGIN,
-  }),
-  "/api",
-  routes
-);
-app.use(
-  cors({
-    origin: CLIENT_ORIGIN,
-  }),
-  "/api",
-  quotesRouter
-);
+app.use("/api", routes);
+app.use("/api", quotesRouter);
 
 /* -------------------------------------------------------- */
 /*                    ERROR HANDLER                         */
 /* -------------------------------------------------------- */
 app.use(
-  "/with-cors",
-  cors(corsOptions),
+  //"/with-cors",
+  //cors(corsOptions),
   function errorHandler(error, req, res, next) {
     //app.use(function errorHandler(error, req, res, next) {
     let response;
