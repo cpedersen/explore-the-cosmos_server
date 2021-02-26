@@ -24,8 +24,7 @@ module.exports = {
   NODE_ENV: process.env.NODE_ENV || "production",
   CLIENT_ORIGIN:
     CLIENT_ORIGIN || "https://explore-the-cosmos-client.vercel.app",
-  DATABASE_URL:
-    DATABASE_URL || "postgresql://dunder_mifflin@localhost/cosmos_quotes",
+  DATABASE_URL: DATABASE_URL || process.env.DATABASE_URL,
   TEST_DATABASE_URL:
     process.env.TEST_DATABASE_URL ||
     "postgresql://dunder_mifflin@localhost/cosmos_quotes_test",
