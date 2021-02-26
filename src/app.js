@@ -88,8 +88,20 @@ app.get("/", (req, res) => {
 });
 
 // 'routes' below refers to Google tags
-app.use("/api", routes);
-app.use("/api", quotesRouter);
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN,
+  }),
+  "/api",
+  routes
+);
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN,
+  }),
+  "/api",
+  quotesRouter
+);
 
 /* -------------------------------------------------------- */
 /*                    ERROR HANDLER                         */
