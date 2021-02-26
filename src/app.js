@@ -61,6 +61,10 @@ app.use(helmet());
 /*                        CORS                              */
 /* -------------------------------------------------------- */
 // Configures the server to allow cross domain communication.
+const corsOptions = {
+  origin: CLIENT_ORIGIN,
+};
+
 app.use(
   cors({
     origin: CLIENT_ORIGIN,
@@ -71,28 +75,36 @@ console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 /* -------------------------------------------------------- */
 /*                        GET                               */
 /* -------------------------------------------------------- */
-app.get("/", (req, res) => {
+app.get("/with-cors", cors(corsOptions), "/", (req, res) => {
+  //app.get("/", (req, res) => {
   res.send("Somewhere, something incredible is waiting to be known!");
   res.status(200);
 });
 
 // 'routes' below refers to Google tags
-app.use("/api", routes);
-app.use("/api", quotesRouter);
+//app.use("/api", routes);
+//app.use("/api", quotesRouter);
+app.use("with-cors", cors(corsOptions), "/api", routes);
+app.use("with-cors", cors(corsOptions), "/api", quotesRouter);
 
 /* -------------------------------------------------------- */
 /*                    ERROR HANDLER                         */
 /* -------------------------------------------------------- */
-app.use(function errorHandler(error, req, res, next) {
-  let response;
-  if (NODE_ENV === "production") {
-    response = { error: { message: "server error" } };
-  } else {
-    console.error(error);
-    response = { message: error.message, error };
+app.use(
+  "/with-cors",
+  cors(corsOptions),
+  function errorHandler(error, req, res, next) {
+    //app.use(function errorHandler(error, req, res, next) {
+    let response;
+    if (NODE_ENV === "production") {
+      response = { error: { message: "server error" } };
+    } else {
+      console.error(error);
+      response = { message: error.message, error };
+    }
+    res.status(500).json(response);
   }
-  res.status(500).json(response);
-});
+);
 
 /* -------------------------------------------------------- */
 /*                    GOOGLE VISION                         */
