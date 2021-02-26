@@ -76,8 +76,9 @@ console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 /*                        GET                               */
 /* -------------------------------------------------------- */
 app.get("/", (req, res) => {
-  //app.get("/", (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -87,8 +88,6 @@ app.get("/", (req, res) => {
 });
 
 // 'routes' below refers to Google tags
-//app.use("/api", routes);
-//app.use("/api", quotesRouter);
 app.use("/api", routes);
 app.use("/api", quotesRouter);
 
