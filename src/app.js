@@ -75,7 +75,7 @@ console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 /* -------------------------------------------------------- */
 /*                        GET                               */
 /* -------------------------------------------------------- */
-app.get("/with-cors", cors(corsOptions), "/", (req, res) => {
+app.get("/", (req, res) => {
   //app.get("/", (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -89,8 +89,8 @@ app.get("/with-cors", cors(corsOptions), "/", (req, res) => {
 // 'routes' below refers to Google tags
 //app.use("/api", routes);
 //app.use("/api", quotesRouter);
-app.use("with-cors", cors(corsOptions), "/api", routes);
-app.use("with-cors", cors(corsOptions), "/api", quotesRouter);
+app.use("/api", routes);
+app.use("/api", quotesRouter);
 
 /* -------------------------------------------------------- */
 /*                    ERROR HANDLER                         */
