@@ -1,4 +1,5 @@
 require("dotenv").config();
+const path = require("path");
 
 const CLIENT_ORIGIN =
   process.env.NODE_ENV === "production"
@@ -11,6 +12,10 @@ let DATABASE_URL =
     : process.env.DATABASE_URL_LOCAL;
 
 const PORT = process.env.PORT || 8000;
+
+const GOOGLE_APPLICATION_CREDENTIALS = path.resolve(
+  process.env.GOOGLE_APPLICATION_CREDENTIALS
+);
 
 console.log("****************************************************************");
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
