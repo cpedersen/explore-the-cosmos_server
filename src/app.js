@@ -30,7 +30,7 @@ const corsOptions = {
   methods: "*",
   //'Access-Control-Allow-Origin',
 };
-/*app.options("*", cors());*/
+app.options("*", cors());
 
 /*app.use(cors(corsOptions));*/
 /*app.use(cors());*/
