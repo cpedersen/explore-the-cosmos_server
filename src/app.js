@@ -25,21 +25,20 @@ const app = express();
 // Configures the server to allow cross domain communication.
 
 const corsOptions = {
-  origin: CLIENT_ORIGIN,
-  /*credentials: true,*/
+  /*origin: CLIENT_ORIGIN,*/
+  origin: "*",
   methods: "*",
-  //'Access-Control-Allow-Origin',
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 app.options("*", cors());
-
-/*app.use(cors(corsOptions));*/
+app.use(cors(corsOptions));
 /*app.use(cors());*/
 
-app.use(
+/*app.use(
   cors({
     origin: "*",
   })
-);
+);*/
 
 /*app.use(cors(corsOptions));
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);*/
