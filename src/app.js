@@ -40,8 +40,8 @@ app.use(cors());
   })
 );*/
 
-app.use(cors(corsOptions));
-console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
+/*app.use(cors(corsOptions));
+console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);*/
 
 /* -------------------------------------------------------- */
 /*                 Body Parser setup                        */
