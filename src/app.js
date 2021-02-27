@@ -26,19 +26,20 @@ const app = express();
 
 const corsOptions = {
   origin: CLIENT_ORIGIN,
-  credentials: true,
+  /*credentials: true,*/
   methods: "*",
+  //'Access-Control-Allow-Origin',
 };
 /*app.options("*", cors());*/
 
 /*app.use(cors(corsOptions));*/
-app.use(cors());
+/*app.use(cors());*/
 
-/*app.use(
+app.use(
   cors({
-    origin: CLIENT_ORIGIN,
+    origin: "*",
   })
-);*/
+);
 
 /*app.use(cors(corsOptions));
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);*/
