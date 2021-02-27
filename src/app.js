@@ -24,24 +24,10 @@ const app = express();
 /* -------------------------------------------------------- */
 // Configures the server to allow cross domain communication.
 
-const corsOptions = {
-  /*origin: CLIENT_ORIGIN,*/
+/*const corsOptions = {
   origin: "*",
-  /*origin: "https://explore-the-cosmos-client.vercel.app",*/
-  /*allowedHeaders: ["Content-Type", "Authorization"],*/
-};
-/*app.options("*", cors());*/
-/*app.use(cors(corsOptions));*/
+};*/
 app.use(cors());
-
-/*app.use(
-  cors({
-    origin: "*",
-  })
-);*/
-
-/*app.use(cors(corsOptions));
-console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);*/
 
 /* -------------------------------------------------------- */
 /*                 Body Parser setup                        */
@@ -85,13 +71,6 @@ app.use(helmet());
 /*                        GET                               */
 /* -------------------------------------------------------- */
 app.get("/", (req, res) => {
-  //res.header("Access-Control-Allow-Origin", "*");
-  //res.header("Access-Control-Allow-Credentials", true);
-  //res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
-  //res.header(
-  //  "Access-Control-Allow-Headers",
-  //  "Origin, X-Requested-With, Content-Type, Accept"
-  //);
   res.send("Somewhere, something incredible is waiting to be known!");
   res.status(200);
 });
