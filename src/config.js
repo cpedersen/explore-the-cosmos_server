@@ -13,9 +13,13 @@ let DATABASE_URL =
 
 const PORT = process.env.PORT || 8000;
 
-const GOOGLE_APPLICATION_CREDENTIALS = path.resolve(
+const GOOGLE_APPLICATION_CREDENTIALS =
+  process.env.NODE_ENV === "production"
+    ? process.env.GOOGLE_APPLICATION_CREDENTIALS_PROD
+    : process.env.GOOGLE_APPLICATION_CREDENTIALS_LOCAL;
+/*const GOOGLE_APPLICATION_CREDENTIALS = path.resolve(
   process.env.GOOGLE_APPLICATION_CREDENTIALS
-);
+);*/
 
 console.log("****************************************************************");
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
