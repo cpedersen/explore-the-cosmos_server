@@ -24,21 +24,23 @@ const app = express();
 /* -------------------------------------------------------- */
 // Configures the server to allow cross domain communication.
 
-/*const corsOptions = {
+const corsOptions = {
   origin: CLIENT_ORIGIN,
   preflightContinue: true,
   credentials: true,
   methods: "POST, GET, PUT, DELETE, OPTIONS",
 };
-app.options("*", cors());
+/*app.options("*", cors());*/
 
-app.use(cors(corsOptions));*/
+app.use(cors(corsOptions));
 
-app.use(
+/*app.use(
   cors({
     origin: CLIENT_ORIGIN,
   })
-);
+);*/
+
+app.use(cors(corsOptions));
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 
 /* -------------------------------------------------------- */
@@ -102,7 +104,6 @@ app.use("/api", quotesRouter);
 /*                    ERROR HANDLER                         */
 /* -------------------------------------------------------- */
 app.use(function errorHandler(error, req, res, next) {
-  //app.use(function errorHandler(error, req, res, next) {
   let response;
   if (NODE_ENV === "production") {
     response = { error: { message: "server error" } };
