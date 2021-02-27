@@ -1,1 +1,1 @@
-echo ${GC_CREDENTIALS} > /app/gc_credentials.json
+echo ${GC_CREDENTIALS} > /app/gc-credentials.json
