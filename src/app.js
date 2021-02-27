@@ -20,6 +20,28 @@ console.log("env", process.env);
 const app = express();
 
 /* -------------------------------------------------------- */
+/*                   Cors setup                             */
+/* -------------------------------------------------------- */
+// Configures the server to allow cross domain communication.
+
+/*const corsOptions = {
+  origin: CLIENT_ORIGIN,
+  preflightContinue: true,
+  credentials: true,
+  methods: "POST, GET, PUT, DELETE, OPTIONS",
+};
+app.options("*", cors());
+
+app.use(cors(corsOptions));*/
+
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN,
+  })
+);
+console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
+
+/* -------------------------------------------------------- */
 /*                 Body Parser setup                        */
 /* -------------------------------------------------------- */
 // bodyParser is needed so that the form data is available in
@@ -60,27 +82,11 @@ app.use(helmet());
 /* -------------------------------------------------------- */
 /*                        CORS                              */
 /* -------------------------------------------------------- */
-// Configures the server to allow cross domain communication.
-const corsOptions = {
-  //origin: true,
-  origin: CLIENT_ORIGIN,
-  preflightContinue: true,
-  credentials: true,
-  methods: "POST, GET, PUT, DELETE, OPTIONS",
-};
-
-app.options("*", cors());
-app.use(
-  cors({
-    origin: CLIENT_ORIGIN,
-  })
-);
-console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 
 /* -------------------------------------------------------- */
 /*                        GET                               */
 /* -------------------------------------------------------- */
-app.get("/", cors(corsOptions), (req, res) => {
+app.get("/", (req, res) => {
   //res.header("Access-Control-Allow-Origin", "*");
   //res.header("Access-Control-Allow-Credentials", true);
   //res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
@@ -93,8 +99,8 @@ app.get("/", cors(corsOptions), (req, res) => {
 });
 
 // 'routes' below refers to Google tags
-app.use("/api", cors(corsOptions), routes);
-app.use("/api", cors(corsOptions), quotesRouter);
+app.use("/api", routes);
+app.use("/api", quotesRouter);
 
 /* -------------------------------------------------------- */
 /*                    ERROR HANDLER                         */
