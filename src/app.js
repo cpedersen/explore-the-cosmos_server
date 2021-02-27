@@ -80,10 +80,6 @@ app.use(morgan(morganOption));
 app.use(helmet());
 
 /* -------------------------------------------------------- */
-/*                        CORS                              */
-/* -------------------------------------------------------- */
-
-/* -------------------------------------------------------- */
 /*                        GET                               */
 /* -------------------------------------------------------- */
 app.get("/", (req, res) => {
@@ -105,7 +101,7 @@ app.use("/api", quotesRouter);
 /* -------------------------------------------------------- */
 /*                    ERROR HANDLER                         */
 /* -------------------------------------------------------- */
-app.use(cors(corsOptions), function errorHandler(error, req, res, next) {
+app.use(function errorHandler(error, req, res, next) {
   //app.use(function errorHandler(error, req, res, next) {
   let response;
   if (NODE_ENV === "production") {
