@@ -30,7 +30,7 @@ const corsOptions = {
   methods: "*",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
-app.options("*", cors());
+/*app.options("*", cors());*/
 app.use(cors(corsOptions));
 /*app.use(cors());*/
 
