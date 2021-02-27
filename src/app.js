@@ -26,13 +26,13 @@ const app = express();
 
 const corsOptions = {
   /*origin: CLIENT_ORIGIN,*/
-  /*origin: "*",*/
-  origin: "https://explore-the-cosmos-client.vercel.app",
+  origin: "*",
+  /*origin: "https://explore-the-cosmos-client.vercel.app",*/
   /*allowedHeaders: ["Content-Type", "Authorization"],*/
 };
 /*app.options("*", cors());*/
-app.use(cors(corsOptions));
-/*app.use(cors());*/
+/*app.use(cors(corsOptions));*/
+app.use(cors());
 
 /*app.use(
   cors({
