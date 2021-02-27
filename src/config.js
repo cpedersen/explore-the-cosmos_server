@@ -10,17 +10,14 @@ const DATABASE_URL =
     ? process.env.DATABASE_URL_PROD
     : process.env.DATABASE_URL_LOCAL;
 
-const PORT =
-  process.env.NODE_ENV === "production"
-    ? process.env.PORT_PROD
-    : process.env.PORT_LOCAL;
+const PORT = process.env.PORT || 8000;
 
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 console.log("DATABASE_URL: ", DATABASE_URL);
 console.log("PORT: ", PORT);
 
 module.exports = {
-  PORT: PORT || 5432,
+  PORT,
   NODE_ENV: process.env.NODE_ENV || "production",
   CLIENT_ORIGIN:
     CLIENT_ORIGIN || "https://explore-the-cosmos-client.vercel.app",
