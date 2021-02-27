@@ -10,11 +10,6 @@ let DATABASE_URL =
     ? process.env.DATABASE_URL
     : process.env.DATABASE_URL_LOCAL;
 
-const GOOGLE_APPLICATION_CREDENTIALS =
-  process.env.NODE_ENV === "production"
-    ? process.env.GOOGLE_APPLICATION_CREDENTIALS
-    : "./gc-credentials.json";
-
 const PORT = process.env.PORT || 8000;
 
 console.log("****************************************************************");
@@ -22,7 +17,10 @@ console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 console.log("NODE_ENV: ", process.env.NODE_ENV);
 console.log("DATABASE_URL: ", DATABASE_URL);
 console.log("PORT: ", PORT);
-console.log("GOOGLE_APPLICATION_CREDENTIALS: ", GOOGLE_APPLICATION_CREDENTIALS);
+console.log(
+  "GOOGLE_APPLICATION_CREDENTIALS: ",
+  process.env.GOOGLE_APPLICATION_CREDENTIALS
+);
 console.log("****************************************************************");
 
 module.exports = {
