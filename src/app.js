@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 /*                 Winston logger setup                     */
 /* -------------------------------------------------------- */
 const logger = winston.createLogger({
-  level: "info",
+  level: "debug",
   format: winston.format.json(),
   transports: [new winston.transports.File({ filename: "info.log" })],
 });
