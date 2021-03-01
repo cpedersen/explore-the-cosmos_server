@@ -30,7 +30,13 @@ quotesRouter
       })
       .catch((...err) => {
         console.log("Error", ...err);
-        next(...err);
+        // TODO - fix this
+        // next(...err);
+        res.json({
+          id: 404,
+          author: "...",
+          content: "Hardcoded quote...",
+        });
       });
     console.log("quotesArray: ", quotesArray, knexInstance);
   })
