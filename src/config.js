@@ -8,8 +8,9 @@ const CLIENT_ORIGIN =
 
 const DATABASE_URL =
   process.env.NODE_ENV === "production"
-    ? `${process.env.DATABASE_URL}?ssl=true`
+    ? process.env.DATABASE_URL
     : process.env.DATABASE_URL_LOCAL;
+//? `${process.env.DATABASE_URL}?ssl=true`
 
 const PORT = process.env.PORT || 8000;
 
