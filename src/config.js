@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 8000;
 
 const GOOGLE_APPLICATION_CREDENTIALS =
   process.env.NODE_ENV === "production"
-    ? process.env.GOOGLE_APPLICATION_CREDENTIALS_PROD
-    : process.env.GOOGLE_APPLICATION_CREDENTIALS_LOCAL;
+    ? process.env.GOOGLE_APPLICATION_CREDENTIALS
+    : process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
 /*const GOOGLE_APPLICATION_CREDENTIALS = path.resolve(
   process.env.GOOGLE_APPLICATION_CREDENTIALS
@@ -27,10 +27,7 @@ console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 console.log("NODE_ENV: ", process.env.NODE_ENV);
 console.log("DATABASE_URL: ", DATABASE_URL);
 console.log("PORT: ", PORT);
-console.log(
-  "GOOGLE_APPLICATION_CREDENTIALS: ",
-  process.env.GOOGLE_APPLICATION_CREDENTIALS
-);
+console.log("GOOGLE_APPLICATION_CREDENTIALS: ", GOOGLE_APPLICATION_CREDENTIALS);
 console.log("****************************************************************");
 
 module.exports = {
