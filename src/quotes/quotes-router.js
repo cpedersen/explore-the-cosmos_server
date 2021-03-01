@@ -21,13 +21,18 @@ quotesRouter
     // Find random quote
     let quotesArray = QuotesService.getAllQuotes(knexInstance)
       .then((quotes) => {
+        console.log("Quotes:", quotes);
         const quote = quotes
           .map(serializeQuote)
           .sort(() => (Math.random() > 0.5 ? 1 : -1))[0];
+        console.log("Quote:", quote);
         res.json(quote);
       })
-      .catch(next);
-    console.log("quotesArray: ", quotesArray);
+      .catch((...err) => {
+        console.log("Error", ...err);
+        next(...err);
+      });
+    console.log("quotesArray: ", quotesArray, knexInstance);
   })
   .post(jsonParser, (req, res, next) => {
     const { author, content } = req.body;
