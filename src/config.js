@@ -13,10 +13,10 @@ let DATABASE_URL =
 
 const PORT = process.env.PORT || 8000;
 
-const GOOGLE_APPLICATION_CREDENTIALS =
-  process.env.NODE_ENV === "production"
+const GOOGLE_APPLICATION_CREDENTIALS = "";
+/*  process.env.NODE_ENV === "production"
     ? process.env.GOOGLE_APPLICATION_CREDENTIALS
-    : process.env.GOOGLE_APPLICATION_CREDENTIALS;
+    : process.env.GOOGLE_APPLICATION_CREDENTIALS;*/
 
 /*const GOOGLE_APPLICATION_CREDENTIALS = path.resolve(
   process.env.GOOGLE_APPLICATION_CREDENTIALS
