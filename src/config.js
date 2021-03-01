@@ -8,8 +8,9 @@ const CLIENT_ORIGIN =
 
 let DATABASE_URL =
   process.env.NODE_ENV === "production"
-    ? `${process.env.DATABASE_URL}/cosmos_quotes`
+    ? process.env.DATABASE_URL
     : process.env.DATABASE_URL_LOCAL;
+//? `${process.env.DATABASE_URL}/cosmos_quotes`
 
 const PORT = process.env.PORT || 8000;
 
