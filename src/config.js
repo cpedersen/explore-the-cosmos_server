@@ -8,19 +8,13 @@ const CLIENT_ORIGIN =
 
 let DATABASE_URL =
   process.env.NODE_ENV === "production"
-    ? process.env.DATABASE_URL
+    ? `${process.env.DATABASE_URL}/cosmos_quotes`
     : process.env.DATABASE_URL_LOCAL;
 
 const PORT = process.env.PORT || 8000;
 
+// Google credentials are set automatically
 const GOOGLE_APPLICATION_CREDENTIALS = "";
-/*  process.env.NODE_ENV === "production"
-    ? process.env.GOOGLE_APPLICATION_CREDENTIALS
-    : process.env.GOOGLE_APPLICATION_CREDENTIALS;*/
-
-/*const GOOGLE_APPLICATION_CREDENTIALS = path.resolve(
-  process.env.GOOGLE_APPLICATION_CREDENTIALS
-);*/
 
 console.log("****************************************************************");
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
