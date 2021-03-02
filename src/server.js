@@ -6,7 +6,7 @@ const db = knex({
   client: "pg",
   connection: DATABASE_URL,
   //connection: `${DATABASE_URL}?sslmode=require`,
-  //ssl: { require: true, rejectUnauthorized: false },
+  ssl: { require: true, rejectUnauthorized: false },
   //ssmode: require,
 });
 
