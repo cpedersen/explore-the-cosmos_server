@@ -6,8 +6,6 @@ const CLIENT_ORIGIN =
     ? process.env.CLIENT_ORIGIN
     : process.env.CLIENT_ORIGIN_LOCAL;
 
-console.log("What is CLIENT_ORIGIN?: ", CLIENT_ORIGIN);
-
 const DATABASE_URL =
   process.env.NODE_ENV === "production"
     ? process.env.DATABASE_URL
