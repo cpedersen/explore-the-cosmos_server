@@ -7,6 +7,7 @@ const db = knex({
   connection: DATABASE_URL,
   //connection: `${DATABASE_URL}?sslmode=require`,
   ssl: { rejectUnauthorized: false },
+  ssmode: require,
 });
 
 // Connect to database
