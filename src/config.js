@@ -10,7 +10,6 @@ const DATABASE_URL =
   process.env.NODE_ENV === "production"
     ? process.env.DATABASE_URL
     : process.env.DATABASE_URL_LOCAL;
-//
 //? `${process.env.DATABASE_URL}?sslmode=require`
 
 const PORT = process.env.PORT || 8000;
@@ -29,7 +28,7 @@ console.log("****************************************************************");
 module.exports = {
   PORT,
   NODE_ENV: process.env.NODE_ENV || "production",
-  CLIENT_ORIGIN: process.env.CLIENT_ORIGIN || CLIENT_ORIGIN,
+  CLIENT_ORIGIN: CLIENT_ORIGIN,
   DATABASE_URL,
   TEST_DATABASE_URL: process.env.TEST_DATABASE_URL,
   GOOGLE_APPLICATION_CREDENTIALS,
