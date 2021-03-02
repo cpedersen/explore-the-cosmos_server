@@ -21,9 +21,6 @@ let GOOGLE_APPLICATION_CREDENTIALS =
 
 const PORT = process.env.PORT || 8000;
 
-// Google credentials are set automatically
-//const GOOGLE_APPLICATION_CREDENTIALS = "";
-
 console.log("****************************************************************");
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 console.log("NODE_ENV: ", process.env.NODE_ENV);
