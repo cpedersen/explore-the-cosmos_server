@@ -8,6 +8,7 @@ const winston = require("winston");
 const vision = require("@google-cloud/vision");
 const client = new vision.ImageAnnotatorClient();
 const cors = require("cors");
+const { CLIENT_ORIGIN } = require("./config");
 const { domain } = require("process");
 const routes = require("./routes");
 const quotesRouter = require("./quotes/quotes-router");
