@@ -8,7 +8,7 @@ const db = knex({
   // On Heroku, set the following config var (https://help.heroku.com/966620):
   // PGSSLMODE: no-verify
 
-  // None of the following worked when set in this file,
+  // None of the following worked when set in this file or in the .env,
   // but I'm keeping this here for reference:
   //connection: `${DATABASE_URL}?sslmode=require`,
   //connection: `${DATABASE_URL}?pgsslmode=no-verify`,
