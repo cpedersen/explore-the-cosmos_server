@@ -18,6 +18,8 @@ let GOOGLE_APPLICATION_CREDENTIALS =
 
 const PORT = process.env.PORT || 8000;
 
+const PGSSLMODE = "no-verify";
+
 console.log("****************************************************************");
 console.log("CLIENT_ORIGIN: ", CLIENT_ORIGIN);
 console.log("NODE_ENV: ", process.env.NODE_ENV);
@@ -34,4 +36,5 @@ module.exports = {
   TEST_DATABASE_URL: process.env.TEST_DATABASE_URL,
   GOOGLE_APPLICATION_CREDENTIALS,
   MIN_VISION_TAG_SCORE: process.env.MIN_VISION_TAG_SCORE || "0.1",
+  PGSSLMODE,
 };
