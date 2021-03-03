@@ -2,3 +2,4 @@ node_modules
 gc-credentials.json
 .env
 .env*
+info.log

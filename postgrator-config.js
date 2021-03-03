@@ -30,7 +30,7 @@ module.exports = {
   database,
   username,
   password,
-  ssl: {
+  /*ssl: {
     rejectUnauthorized: false,
-  },
+  },*/
 };
