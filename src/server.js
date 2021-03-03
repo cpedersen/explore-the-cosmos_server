@@ -4,9 +4,11 @@ const { PORT, DATABASE_URL, TEST_DATABASE_URL } = require("./config");
 
 const db = knex({
   client: "pg",
-  //connection: DATABASE_URL,
+  connection: DATABASE_URL,
+  // On Heroku, set the following config var:
+  // PGSSLMODE: no-verify
   //connection: `${DATABASE_URL}?sslmode=require`,
-  connection: `${DATABASE_URL}?pgsslmode=no-verify`,
+  //connection: `${DATABASE_URL}?pgsslmode=no-verify`,
   //ssl: { require: true, rejectUnauthorized: false },
   //pgsslmode: no-verify,
   //sslmode: require,
