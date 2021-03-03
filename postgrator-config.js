@@ -1,7 +1,7 @@
 require("dotenv").config();
 const url = require("url");
 console.log("url: ", url);
-const { DATABASE_URL } = require("./config");
+//const { DATABASE_URL } = require("./config");
 
 let host;
 let port;
@@ -9,8 +9,8 @@ let database;
 let username;
 let password;
 
-if (DATABASE_URL) {
-  const dbUrl = url.parse(DATABASE_URL);
+if (process.env.DATABASE_URL) {
+  const dbUrl = url.parse(process.env.DATABASE_URL);
   host = dbUrl.hostname;
   port = dbUrl.port;
   database = dbUrl.pathname.replace(/^\//, "");
