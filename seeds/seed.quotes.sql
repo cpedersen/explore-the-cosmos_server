@@ -2,23 +2,52 @@ INSERT INTO cosmos_quotes (id, author, content)
 VALUES
     ('1','Carl Sagan', 'We are a way for the cosmos to know itself.'),
     ('2', 'Carl Sagan', 'The cosmos is within us. We are made of star-stuff.'),
-    ('3', 'Carl Sagan', 'The nitrogen in our DNA, the calcium in our teeth, the iron 
-    in our blood, the carbon in our apple pies were made in the interiors of collapsing 
-    stars. We are made of starstuff.'),
-    ('4', 'Carl Sagan', 'One of the saddest lessons of history is this: If we’ve been 
-    bamboozled long enough, we tend to reject any evidence of the bamboozle. We’re no 
-    longer interested in finding out the truth. The bamboozle has captured us. It’s 
-    simply too painful to acknowledge, even to ourselves, that we’ve been taken. Once 
-    you give a charlatan power over you, you almost never get it back.'),
-    ('5', 'Carl Sagan', 'That’s here. That’s home. That’s us. On it, everyone you love, everyone you know, 
-    everyone you have ever heard of, every human being who ever was, lived out their lives...[E]very king and peasant, 
-    every young couple in love, every mother and father, hopeful child, inventor and explorer, every revered teacher of morals, 
-    every corrupt politician, every superstar, every supreme leader, every saint and sinner in the history of our species lived 
-    there–on a mote of dust suspended in a sunbeam.'),
-    ('6', 'Carl Sagan', 'There is a wide yawning black infinity. In every direction 
-    the extension is endless, the sensation of depth is overwhelming. And the darkness is 
-    immortal. Where light exists, it is pure, blazing, fierce; but light exists almost nowhere, 
-    and the blackness itself is also pure and blazing and fierce. But most of all, there is very 
-    nearly nothing in the dark; except for little bits here and there, often associated with the 
-    light, this infinite receptacle is empty. This picture is strangely frightening. It should 
-    be familiar. It is our universe.');
+    ('3', 'Carl Sagan', 'The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.'),
+    ('4', 'Carl Sagan', 'One of the saddest lessons of history is this: If we’ve been bamboozled long enough, we tend to reject any evidence of the bamboozle. We’re no longer interested in finding out the truth. The bamboozle has captured us. It’s simply too painful to acknowledge, even to ourselves, that we’ve been taken. Once you give a charlatan power over you, you almost never get it back.'),
+    ('5', 'Carl Sagan', 'That’s here. That’s home. That’s us. On it, everyone you love, everyone you know, everyone you have ever heard of, every human being who ever was, lived out their lives...[E]very king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every revered teacher of morals, every corrupt politician, every superstar, every supreme leader, every saint and sinner in the history of our species lived there–on a mote of dust suspended in a sunbeam.'),
+    ('6', 'Carl Sagan', 'There is a wide yawning black infinity. In every direction the extension is endless, the sensation of depth is overwhelming. And the darkness is immortal. Where light exists, it is pure, blazing, fierce; but light exists almost nowhere, and the blackness itself is also pure and blazing and fierce. But most of all, there is very nearly nothing in the dark; except for little bits here and there, often associated with the light, this infinite receptacle is empty. This picture is strangely frightening. It should be familiar. It is our universe.'),
+    ('7', 'Carl Sagan', 'Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves.'),
+    ('8', 'Carl Sagan', 'The significance of our lives and our fragile planet is then determined only by our own wisdom and courage. We are the custodians of life''s meaning. We long for a Parent to care for us, to forgive us our errors, to save us from our childish mistakes. But knowledge is preferable to ignorance. Better by far to embrace the hard truth than a reassuring fable. If we crave some cosmic purpose, then let us find ourselves a worthy goal.'),
+    ('9', 'Carl Sagan', 'Think of the rivers of blood spilled by all those generals and emperors so that in glory and in triumph they could become the ''Momentary'' masters of a ''Fraction'' of a ''Dot''.'),
+    ('10', 'Carl Sagan', 'The vast distances that separate the stars are providential. Beings and worlds are quarantined from one another. The quarantine is lifted only for those with sufficient self-knowledge and judgment to have safely traveled from star to star.'),
+    ('11', 'Carl Sagan', 'The immense distances to the stars and the galaxies mean that we see everything in space in the past, some as they were before the Earth came to be. Telescopes are time machines.'),
+    ('12', 'Carl Sagan', 'We’re Johnny-come-latelies. We live in the cosmic boondocks. We emerged from microbes and muck. Apes are our cousins. Our thoughts and feelings are not fully under our own control. There may be much smarter and very different beings elsewhere. And on top of all this, we’re making a mess of our planet and becoming a danger to ourselves'),
+    ('13', 'Carl Sagan', 'Science is a way of thinking much more than it is a body of knowledge.'),
+    ('14', 'Carl Sagan', 'We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and techology.'),
+    ('15', 'Carl Sagan', 'The universe seems neither benign nor hostile, merely indifferent.'),
+    ('16', 'Carl Sagan', 'Extinction is the rule. Survial is the exception.'),
+    ('17', 'Carl Sagan', 'Who are we? We find that we live on an insignificant planet of a humdrum star lost in a galaxy tucked away in some forgotten corner of a universe in which there are far more galaxies than people.'),
+    ('18', 'Carl Sagan', 'We are the representatives of the cosmos; we are an example of what hydrogen atoms can do, given 15 billion years of cosmic evolution.'),
+    ('19', 'Carl Sagan', 'There is a wide, yawning black infinity. In every direction, the extension is endless; the sensation of depth is overwhelming. And the darkness is immortal. Where light exists, it is pure, blazing, fierce; but light exists almost nowhere, and the blackness itself is also pure and blazing and fierce.'),
+    ('20', 'Carl Sagan', 'The origin and evolution of life are connected in the most intimate way with the origin and evolution of the stars.'),
+    ('21', 'Carl Sagan', 'The size and age of the Cosmos are beyond ordinary human understanding. Lost somewhere between immensity and eternity is our tiny planetary home.'),
+    ('22', 'Carl Sagan', 'Far better it seems to me, in our vulnerability, is to look death in the eye and to be grateful every day for the brief but magnificent opportunity that life provides.'),
+    ('23', 'Carl Sagan', 'We live on a hunk of rock and metal that circles a humdrum star that is one of 400 billion other stars that make up the Milky Way Galaxy, which is one of billions of other galaxies which make up a universe which may be one of a very large number, perhaps an infinite number, of other universes. That is a perspective on human life and our culture that is well worth pondering.'),
+    ('24', 'Carl Sagan', 'If we long for our planet to be important, there is something we can do about it. We make our world significant by the courage of our questions and by the depth of our answers.'),
+    ('25', 'Carl Sagan', 'The Cosmos is all that is or ever was or ever will be.'),
+    ('26', 'Carl Sagan', 'I believe our future depends on how well we know this Cosmos in which we float like a mote of dust in the morning sky.'),
+    ('27', 'Carl Sagan', 'Science is not only compatible with spirituality; it is a profound source of spirituality.'),
+    ('28', 'Carl Sagan', 'I believe that the extraordinary should certainly be pursued. But extraordinary claims require extraordinary evidence.'),
+    ('29', 'Carl Sagan', 'It pays to keep an open mind, but not so open your brains fall out.'),
+    ('30', 'Carl Sagan', 'We are like butterflies that flutter for a day and think it is forever.'),
+    ('31', 'Carl Sagan', 'The universe is a pretty big place. If it’s just us, seems like an awful waste of space.'),
+    ('32', 'Carl Sagan', 'The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine what’s true.'),
+    ('33', 'Carl Sagan', 'We have also arranged things so that almost no one understands science and technology. This is a prescription for disaster. We might get away with it for a while, but sooner or later this combustible mixture of ignorance and power is going to blow up in our faces.'),
+    ('34', 'Carl Sagan', 'The universe is not required to be in perfect harmony with human ambition.'),
+    ('35', 'Carl Sagan', 'The brain is like a muscle. When it is in use we feel very good. Understanding is joyous.'),
+    ('36', 'Carl Sagan', 'I am often amazed at how much more capability and enthusiasm for science there is among elementary school youngsters than among college students.'),
+    ('37', 'Carl Sagan', 'There are naive questions, tedious questions, ill-phrased questions, questions put after inadequate self-criticism. But every question is a cry to understand the world. There is no such thing as a dumb question.'),
+    ('38', 'Carl Sagan', 'Our species needs, and deserves, a citizenry with minds wide awake and a basic understanding of how the world works.'),
+    ('39', 'Carl Sagan', 'We are fortunate: we are alive; we are powerful; the welfare of our civilization and our species is in our hands. If we do not speak for Earth, who will? If we are not committed to our own survival, who will be?'),
+    ('40', 'Carl Sagan', 'We must understand the Cosmos as it is and not confuse how it is with how we wish it to be.'),
+    ('41', 'Carl Sagan', 'Intellectual capacity is no guarantee against being dead wrong.'),
+    ('42', 'Carl Sagan', 'We are privileged to live in, and if we are lucky to influence, one of the most critical epochs in the history of the human species.'),
+    ('43', 'Carl Sagan', 'The nature of life on Earth and the search for life elsewhere are two sides of the same question—the search for who we are.'),
+    ('44', 'Carl Sagan', 'We tend not to be especially critical when presented with evidence that seems to confirm our prejudices.'),
+    ('45', 'Carl Sagan', 'I would rather be a transformed ape than a degenerate son of Adam.'),
+    ('46', 'Carl Sagan', 'Understanding is a kind of ecstasy.'),
+    ('47', 'Carl Sagan', 'But deep down, at the molecular heart of life, the trees and we are essentially identical.'),
+    ('48', 'Carl Sagan', 'Exploration is our nature. We began as wanderers, and we are wanderers still. We have lingered long enough on the shores of the cosmic ocean. We are ready at last to set sail for the stars.'),
+    ('49', 'Carl Sagan', 'It seems to me what is called for is an exquisite balance between two conflicting needs: the most skeptical scrutiny of all hypotheses that are served up to us and at the same time a great openness to new ideas … If you are only skeptical, then no new ideas make it through to you …On the other hand, if you are open to the point of gullibility and have not an ounce of skeptical sense in you, then you cannot distinguish the useful ideas from the worthless ones.'),
+    ('50', 'Carl Sagan', 'The idea that God is an oversized white male with a flowing beard who sits in the sky and tallies the fall of every sparrow is ludicrous. But if by God one means the set of physical laws that govern the universe, then clearly there is such a God. This God is emotionally unsatisfying... it does not make much sense to pray to the law of gravity.');
+    
