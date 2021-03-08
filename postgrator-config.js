@@ -1,6 +1,7 @@
 require("dotenv").config();
 const url = require("url");
 console.log("url: ", url);
+// The following doesn't work. Not sure why:
 //const { DATABASE_URL } = require("./config");
 
 let host;
