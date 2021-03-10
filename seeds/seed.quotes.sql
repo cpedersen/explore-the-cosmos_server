@@ -15,7 +15,7 @@ VALUES
     ('13', 'Carl Sagan', 'Science is a way of thinking much more than it is a body of knowledge.'),
     ('14', 'Carl Sagan', 'We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and techology.'),
     ('15', 'Carl Sagan', 'The universe seems neither benign nor hostile, merely indifferent.'),
-    ('16', 'Carl Sagan', 'Extinction is the rule. Survial is the exception.'),
+    ('16', 'Carl Sagan', 'Extinction is the rule. Survival is the exception.'),
     ('17', 'Carl Sagan', 'Who are we? We find that we live on an insignificant planet of a humdrum star lost in a galaxy tucked away in some forgotten corner of a universe in which there are far more galaxies than people.'),
     ('18', 'Carl Sagan', 'We are the representatives of the cosmos; we are an example of what hydrogen atoms can do, given 15 billion years of cosmic evolution.'),
     ('19', 'Carl Sagan', 'There is a wide, yawning black infinity. In every direction, the extension is endless; the sensation of depth is overwhelming. And the darkness is immortal. Where light exists, it is pure, blazing, fierce; but light exists almost nowhere, and the blackness itself is also pure and blazing and fierce.'),
