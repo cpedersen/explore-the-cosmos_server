@@ -25,7 +25,28 @@ POST https://vision.googleapis.com/v1/images:annotate
 
 Required:
 
+- Every request must contain a _requests_ list.
+- Within the _requests_ list:
+  - _image_ specifies the image file (image can be passed via cloud storage or via an HTTP or HTTPS url)
+  - _features_ lists the types of annotation to perform on the image. You can specify one or many times, as well as the _maxResults_ to return for each. In this implementation, LABEL_DETECTION was used. There are other supported features, though:
+    - TYPE_UNSPECIFIED
+    - FACE_DETECTION
+    - LANDMARK_DETECTION
+    - LOGO_DETECTION
+    - LABEL_DETECTION
+    - TEXT_DETECTION
+    - DOCUMENT_TEXT_DETECTION
+    - SAFE_SEARCH_DETECTION
+    - IMAGE_PROPERTIES
+    - CROP_HINTS
+    - WEB_DETECTION
+    - PRODUCT_SEARCH
+    - OBJECT_LOCALIZATION
+
 Optional:
+
+- Within the requests list:
+  - _imageContext_ specifies hints to the service to help with annotation (boudning boxes, languages, and crop hints aspect ratios)
 
 ### Data Params
 
@@ -43,6 +64,12 @@ A LABEL_DETECTION response includes the detected labels, their score, topicality
 If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format.
 
 ### Error Response
+
+A fetch image request may fail if the specified host denies the request (due to request throttling or DOS prevention), or if Google throttles requests to the site for abuse prevention.
+
+For a complete list of possible errors, see the following:
+
+- https://cloud.google.com/vision/docs/reference/rest/v1/Code
 
 ### Sample Call
 
