@@ -46,7 +46,7 @@ Required:
 Optional:
 
 - Within the requests list:
-  - _imageContext_ specifies hints to the service to help with annotation (boudning boxes, languages, and crop hints aspect ratios)
+  - _imageContext_ specifies hints to the service to help with annotation (bounding boxes, languages, and crop hints aspect ratios)
 
 ### Data Params
 
